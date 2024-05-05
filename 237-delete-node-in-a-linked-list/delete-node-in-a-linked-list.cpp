@@ -7,7 +7,12 @@
  * };
  */
 class Solution {
+    
 public:
+Solution(){
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+    }
     void deleteNode(ListNode* node) {
         node->val= node->next->val;node->next = node->next->next;
     }
