@@ -8,12 +8,13 @@ from collections import deque
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
         l=[]
-        q=[root]
+        q=deque()
+        q.append(root)
         if not root:return []
         while q:
             leval =[]
             for i in range(len(q)):
-                a = q.pop(0)
+                a = q.popleft()
                 leval.append(a.val)
                 if a.left:
                     q.append(a.left)
