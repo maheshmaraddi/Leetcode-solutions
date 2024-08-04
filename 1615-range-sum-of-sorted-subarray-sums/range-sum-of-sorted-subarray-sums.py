@@ -3,22 +3,24 @@ class Solution:
 
     def rangeSum(self, nums: List[int], n: int, left: int, right: int) -> int:
         mod = 10**9 + 7
-        
-        # Calculate prefix sums
-        prefix_sums = [0] * (n + 1)
-        for i in range(n):
-            prefix_sums[i + 1] = prefix_sums[i] + nums[i]
-        
+
         # Generate all possible subarray sums
         subarray_sums = []
         for i in range(n):
-            for j in range(i + 1, n + 1):
-                subarray_sums.append(prefix_sums[j] - prefix_sums[i])
-        
-        # Sort the subarray sums
-        subarray_sums.sort()
-        
-        # Calculate the sum of the elements from 'left' to 'right'
-        result = sum(subarray_sums[left - 1:right]) % mod
-        
+            s = 0
+            for j in range(i, n):
+                s += nums[j]
+                subarray_sums.append(s)
+
+        # Find the sum of elements between 'left' and 'right' using heap
+        # Use a min-heap to find the kth smallest element efficiently
+        heapq.heapify(subarray_sums)
+        result = 0
+
+        for i in range(1, right + 1):
+            val = heapq.heappop(subarray_sums)
+            if i >= left:
+                result += val
+                result %= mod
+
         return result
