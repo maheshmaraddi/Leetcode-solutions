@@ -17,7 +17,7 @@
 ---
 
 ### <strong class="example">Example 1:</strong>
-
+ 
 <pre>
 <strong>Input:</strong> nums = [7,2,5,10,8], k = 2
 <strong>Output:</strong> 18

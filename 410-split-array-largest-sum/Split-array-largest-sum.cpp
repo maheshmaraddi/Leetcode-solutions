@@ -9,7 +9,7 @@ public:
             int count=0;
             while(i<nums.size()){
                 if(count==k || nums[i]>mid){
-                    left=mid+1;
+                    left=mid+1; 
                     break;
                 }
                 int sums=0;
