@@ -1,6 +1,5 @@
-Here's the updated README content reflecting the corrected constraint format:
 
-# Separate Black and White Balls
+# 2938. Separate Black and White Balls
 
 ## Problem Statement
 
@@ -62,18 +61,3 @@ All the black balls are already grouped to the right, requiring 0 steps.
 - `s.length == n`
 - `s[i]` is either `'0'` or `'1'`.
 
-## Approach
-
-To solve this problem efficiently, follow these steps:
-
-1. **Count Black Balls**: Count the number of `1`s in the string, which represent the black balls.
-2. **Calculate Swaps**: For each black ball encountered, calculate how many swaps are needed to move it to the rightmost position by keeping track of how many white balls (0s) are to the left of it.
-3. **Total Steps**: Sum the calculated swaps to get the total number of steps required.
-
-## Implementation
-
-You may implement the solution in your preferred programming language using the outlined approach to find the minimum number of steps to separate the black and white balls.
-
----
-
-Feel free to use this formatted text in your README file!
