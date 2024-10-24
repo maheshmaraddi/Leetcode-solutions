@@ -1,73 +1,28 @@
-# LeetCode Solutions 📊
+# Remove Element
 
-![LeetCode](https://img.shields.io/badge/LeetCode-Solutions-brightgreen) ![Python](https://img.shields.io/badge/Python-3.8-blue)
+## Problem Statement
 
-Welcome to my **LeetCode solutions repository**! Here, you'll find a comprehensive collection of my problem-solving journey across various topics and difficulty levels. Each solution is automatically pushed after completion, showcasing my progress and improving skills.
+Given an integer array `nums` and an integer `val`, remove all occurrences of `val` in `nums` in-place. The order of the elements may be changed. Then return the number of elements in `nums` which are not equal to `val`.
 
----
+### Requirements
 
-## 🌟 Repository Highlights
+- Change the array `nums` such that the first `k` elements of `nums` contain the elements which are not equal to `val`. The remaining elements of `nums` are not important as well as the size of `nums`.
+- Return `k`.
 
-- **Diverse Topics**:  
-  Solutions covering various areas:
-  - 🥇 **Arrays**
-  - 🧩 **Strings**
-  - 🌳 **Trees**
-  - 🌐 **Graphs**
-  - ⚙️ **Dynamic Programming**
-  - 🧮 **Mathematics**
-  - 🛠️ **Bit Manipulation**
-  
-- **Difficulty Levels**:  
-  Problems categorized into:
-  - 🟢 **Easy**
-  - 🟡 **Medium**
-  - 🔴 **Hard**
+## Custom Judge
 
-- **Learning Journey**:  
-  A personal reflection on my approach, including:
-  - 🧠 Thought processes
-  - 🔍 Algorithms used
-  - ⚠️ Common pitfalls
-  - 📚 Key takeaways for future reference
+The judge will test your solution using the following code:
 
----
+```cpp
+int[] nums = [...]; // Input array
+int val = ...; // Value to remove
+int[] expectedNums = [...]; // The expected answer with correct length.
+// It is sorted with no values equaling val.
 
-## 📁 Folder Structure
+int k = removeElement(nums, val); // Calls your implementation
 
-```plaintext
-/LeetCode-Solutions
-  ├── Easy
-  │   ├── Problem1.py
-  │   ├── Problem2.py
-  │   └── ...
-  ├── Medium
-  │   ├── Problem1.py
-  │   ├── Problem2.py
-  │   └── ...
-  ├── Hard
-  │   ├── Problem1.py
-  │   ├── Problem2.py
-  │   └── ...
-  └── README.md
-
-```
-
-## 🎉 Contribution Guidelines for Hacktoberfest 🎉
-
-Welcome to the **LeetCode Solutions** repository! Contributions are open for Hacktoberfest, and we would love your help to grow this collection of solutions! 🎉
-
-### 📝 Contribution Rules:
-1. **Star the Repository ⭐**: Please make sure to star this repo before making a Pull Request (PR) or Forking it.
-2. **Fork the Repository**: To contribute, fork the repository and make changes in the forked version.
-3. **Adhere to LeetCode's Problem Numbering**: When submitting a new solution, ensure that the file is named correctly using the problem's **exact title** and **number** (e.g., `1_Two_Sum.py`).
-4. **Solution Format**:
-   - Each solution must include a brief explanation or comments in the code.
-   - The language of choice is Python, but contributions in C++, Java, and other languages are welcome.
-5. **Quality Over Quantity**: Ensure your solution is optimized and tested. Contributions with incorrect or untested code will be rejected.
-6. **No Duplicate Solutions**: Before submitting, check if a solution for that specific problem already exists. If it does, only provide a better or more optimized version.
-7. **Hacktoberfest Participation**: Make meaningful contributions! Please avoid spammy or irrelevant PRs just to get your Hacktoberfest count up. These will be marked invalid.
-
----
-
-Thank you for contributing and being part of this repository! Let's make coding fun and educational for everyone! 🚀
+assert k == expectedNums.length;
+sort(nums, 0, k); // Sort the first k elements of nums
+for (int i = 0; i < actualLength; i++) {
+    assert nums[i] == expectedNums[i];
+}
